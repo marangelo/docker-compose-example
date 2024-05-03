@@ -1,13 +1,21 @@
 version: '3'
 
+# Configuración de servicios (containers) de PHP para diferentes versiones
 services:
+  # Servidor PHP 8.2 con nginx
   php82:
+    # Nombre del contenedor
     container_name: php82
+    # Imagen de Docker a utilizar
     image: kooldev/php:8.2-nginx
+    # Asigna puertos del host al contenedor
     ports:
-      - "9082:80"
+      - "9082:80" # localhost:9082 -> contenedor:80
+    # Monta volúmenes del host al contenedor
     volumes:
-      - ./www/site-01:/app/public
+      - ./www/site-01:/app/public # Carpeta de la aplicación en el host -> /app/public en el contenedor
+  
+  # Servidor PHP 8.1 con nginx
   php81:
     container_name: php81
     image: kooldev/php:8.1-nginx
@@ -16,7 +24,7 @@ services:
     volumes:
       - ./www/site-02:/app/public
 
-
+  # Servidor PHP 7.4 con nginx
   php74:
     container_name: php74
     image: kooldev/php:7.4-nginx
