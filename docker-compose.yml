@@ -3,26 +3,26 @@ version: '3'
 services:
   php82:
     container_name: php82
-    image: kooldev/php:8.2
+    image: kooldev/php:8.2-nginx
     ports:
-      - "9082:9000"
+      - "9082:80"
     volumes:
       - ./www/site-01:/var/www/html
 
   php81:
-    container_name: php81
+    container_name: php81-nginx
     image: kooldev/php:8.1
     ports:
-      - "9081:9000"
+      - "9081:80"
     volumes:
       - ./www/site-02:/var/www/html
 
 
   php74:
     container_name: php74
-    image: kooldev/php:7.4
+    image: kooldev/php:7.4-nginx
     ports:
-      - "9074:9000"
+      - "9074:80"
     volumes:
       - ./www/site-03:/var/www/html
 
