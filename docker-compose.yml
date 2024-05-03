@@ -7,7 +7,7 @@ services:
     ports:
       - "9082:80"
     volumes:
-      - ./www/site-01:/var/www/html
+      - ./www/site-01:/app/public
 
   php81:
     container_name: php81-nginx
@@ -15,7 +15,7 @@ services:
     ports:
       - "9081:80"
     volumes:
-      - ./www/site-02:/var/www/html
+      - ./www/site-02:/app/public
 
 
   php74:
@@ -24,5 +24,5 @@ services:
     ports:
       - "9074:80"
     volumes:
-      - ./www/site-03:/var/www/html
+      - ./www/site-03:/app/public
 
